@@ -1,8 +1,8 @@
 import rfc3339
 import datetime
 import ner
-from dateutil.parser import parse
 from textblob import TextBlob
+from dateutil.parser import parse
 
 def eventBeginandEnd(sentence):
     times, dates, _ = ner.find_cd(TextBlob(sentence))
@@ -30,5 +30,17 @@ def find_cd(sent):
                 pos.append(part_of_speech)
     return cd, ordinal, pos
 '''
+
+#timeString = 'I will schedule a study session on 21th from 5pm to 6pm'
+
+#result = parse(timeString, fuzzy_with_tokens = True)
+
+#print(result)
+
+#rfcConvert = rfc3339.rfc3339(result[0])
+#begin, end = eventBeginandEnd(timeString)
+
+#print(begin)
+#print(end)
 
 
